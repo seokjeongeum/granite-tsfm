@@ -409,6 +409,7 @@ class TimeSeriesAnomalyDetectionPipeline(TimeSeriesPipeline):
             if mode_selected is not None:
                 for i, col_name in enumerate(target_columns):
                     model_outputs[f"{col_name}_selected_mode"] = mode_selected[..., i]
+            model_outputs.update(anomaly_score=score.mean(axis=1))
         else:
             model_outputs.update(anomaly_score=score.ravel())
             if mode_selected is not None:
