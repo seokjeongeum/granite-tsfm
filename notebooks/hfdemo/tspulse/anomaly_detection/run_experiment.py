@@ -124,13 +124,13 @@ if __name__ == "__main__":
     parser.add_argument(
         "--data_direc",
         type=str,
-        default="Datasets/TSB-AD-U/",
+        default="Datasets/TSB-AD-M/",
         help="specify the directory where all the csv data-files are stored.",
     )
     parser.add_argument(
         "--eval_file",
         type=str,
-        default="Datasets/File_List/TSB-AD-U-Eva.csv",
+        default="Datasets/File_List/TSB-AD-M-Eva.csv",
         help="file containing list of valid csv files.",
     )
     parser.add_argument(
