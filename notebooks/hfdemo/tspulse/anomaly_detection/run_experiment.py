@@ -163,4 +163,4 @@ if __name__ == "__main__":
             all_files = [filename.strip() for filename in fp.readlines() if file_filter in filename.strip()]
     all_results = parallel_process_files(all_files, args)
     df = pd.DataFrame(all_results).set_index("file")
-    df.to_csv(args.out_file, float_format="%.5f", header=True)
+    df.to_csv(args.out_file, header=True)
