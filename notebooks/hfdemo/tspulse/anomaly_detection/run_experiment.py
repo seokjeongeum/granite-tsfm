@@ -124,13 +124,13 @@ if __name__ == "__main__":
     parser.add_argument(
         "--data_direc",
         type=str,
-        default="Datasets/TSB-AD-M/",
+        default="Datasets/TSB-AD-U/",
         help="specify the directory where all the csv data-files are stored.",
     )
     parser.add_argument(
         "--eval_file",
         type=str,
-        default="Datasets/File_List/TSB-AD-M-Eva.csv",
+        default="Datasets/File_List/TSB-AD-U-Eva.csv",
         help="file containing list of valid csv files.",
     )
     parser.add_argument(
@@ -163,4 +163,4 @@ if __name__ == "__main__":
             all_files = [filename.strip() for filename in fp.readlines() if file_filter in filename.strip()]
     all_results = parallel_process_files(all_files, args)
     df = pd.DataFrame(all_results).set_index("file")
-    df.to_csv(args.out_file, header=True)
+    df.to_csv(args.out_file, float_format="%.5f", header=True)
